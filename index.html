@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Checklist Pokédex</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+<button class="close-btn" onclick="toggleMenu()">✕</button>
+
+<h3>Generación</h3>
+<label><input type="checkbox" class="gen" value="1"> Gen 1</label>
+<label><input type="checkbox" class="gen" value="2"> Gen 2</label>
+<label><input type="checkbox" class="gen" value="3"> Gen 3</label>
+<label><input type="checkbox" class="gen" value="4"> Gen 4</label>
+<label><input type="checkbox" class="gen" value="5"> Gen 5</label>
+<label><input type="checkbox" class="gen" value="6"> Gen 6</label>
+<label><input type="checkbox" class="gen" value="7"> Gen 7</label>
+<label><input type="checkbox" class="gen" value="8"> Gen 8</label>
+<label><input type="checkbox" class="gen" value="9"> Gen 9</label>
+
+<h3>Tipos</h3>
+<label><input type="checkbox" class="type" value="normal"> Normal</label>
+<label><input type="checkbox" class="type" value="fire"> Fuego</label>
+<label><input type="checkbox" class="type" value="water"> Agua</label>
+<label><input type="checkbox" class="type" value="grass"> Planta</label>
+<label><input type="checkbox" class="type" value="electric"> Eléctrico</label>
+<label><input type="checkbox" class="type" value="ice"> Hielo</label>
+<label><input type="checkbox" class="type" value="fighting"> Lucha</label>
+<label><input type="checkbox" class="type" value="poison"> Veneno</label>
+<label><input type="checkbox" class="type" value="ground"> Tierra</label>
+<label><input type="checkbox" class="type" value="flying"> Volador</label>
+<label><input type="checkbox" class="type" value="psychic"> Psíquico</label>
+<label><input type="checkbox" class="type" value="bug"> Bicho</label>
+<label><input type="checkbox" class="type" value="rock"> Roca</label>
+<label><input type="checkbox" class="type" value="ghost"> Fantasma</label>
+<label><input type="checkbox" class="type" value="dragon"> Dragón</label>
+<label><input type="checkbox" class="type" value="dark"> Siniestro</label>
+<label><input type="checkbox" class="type" value="steel"> Acero</label>
+<label><input type="checkbox" class="type" value="fairy"> Hada</label>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="contador">
+CAPTURADOS: <span id="num">0</span> / 1025
+</div>
+
+<input id="search" class="search" placeholder="Buscar nombre o número">
+
+<button class="btn-reset" id="resetBtn">Reiniciar</button>
+
+</div>
+
+<!-- GRID -->
+<div id="grid" class="grid"></div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+
+<button class="close-modal" id="closeModal">✕</button>
+
+<h2 id="pokeName"></h2>
+
+<div class="poke-layout">
+
+<div class="poke-left">
+<img id="pokeImg">
+<div id="pokeTypes"></div>
+<div id="pokeInfo"></div>
+<div id="pokeEvo"></div>
+</div>
+
+<div class="poke-data">
+
+<div id="pokeStats"></div>
+
+<div class="chart-box">
+<canvas id="statsChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="data/names.js"></script>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>
